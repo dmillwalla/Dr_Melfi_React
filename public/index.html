@@ -3,12 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+    <script src="https://apis.google.com/js/api.js"></script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -25,10 +37,97 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      .lds-roller {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-roller div {
+        animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        transform-origin: 40px 40px;
+      }
+      .lds-roller div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #000;
+        margin: -4px 0 0 -4px;
+      }
+      .lds-roller div:nth-child(1) {
+        animation-delay: -0.036s;
+      }
+      .lds-roller div:nth-child(1):after {
+        top: 63px;
+        left: 63px;
+      }
+      .lds-roller div:nth-child(2) {
+        animation-delay: -0.072s;
+      }
+      .lds-roller div:nth-child(2):after {
+        top: 68px;
+        left: 56px;
+      }
+      .lds-roller div:nth-child(3) {
+        animation-delay: -0.108s;
+      }
+      .lds-roller div:nth-child(3):after {
+        top: 71px;
+        left: 48px;
+      }
+      .lds-roller div:nth-child(4) {
+        animation-delay: -0.144s;
+      }
+      .lds-roller div:nth-child(4):after {
+        top: 72px;
+        left: 40px;
+      }
+      .lds-roller div:nth-child(5) {
+        animation-delay: -0.18s;
+      }
+      .lds-roller div:nth-child(5):after {
+        top: 71px;
+        left: 32px;
+      }
+      .lds-roller div:nth-child(6) {
+        animation-delay: -0.216s;
+      }
+      .lds-roller div:nth-child(6):after {
+        top: 68px;
+        left: 24px;
+      }
+      .lds-roller div:nth-child(7) {
+        animation-delay: -0.252s;
+      }
+      .lds-roller div:nth-child(7):after {
+        top: 63px;
+        left: 17px;
+      }
+      .lds-roller div:nth-child(8) {
+        animation-delay: -0.288s;
+      }
+      .lds-roller div:nth-child(8):after {
+        top: 56px;
+        left: 12px;
+      }
+      @keyframes lds-roller {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="modal"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
