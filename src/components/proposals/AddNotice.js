@@ -2,9 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { getNoticeUpdates } from "../../actions";
 import { REQUEST_PENDING } from "../../actions/types";
-import StreamForm from "./StreamForm";
 
-class StreamCreate extends React.Component {
+class AddNotice extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -253,4 +252,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getNoticeUpdates })(StreamCreate);
+export default connect(mapStateToProps, { getNoticeUpdates })(AddNotice);

@@ -2,24 +2,12 @@ import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 
-import {
-  fetchStream,
-  editStream,
-  getSolicitationUpdates,
-  getPreferences,
-  getNoticeUpdates,
-} from "../../actions";
+import { getSolicitationUpdates } from "../../actions";
 import { REQUEST_PENDING } from "../../actions/types";
 
-class StreamList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { selectedNotice: "" };
-  }
-
+class TrackNotice extends React.Component {
   componentDidMount() {
-    // this.props.getSolicitationUpdates();
-    this.props.getPreferences("def_pref");
+    this.props.getSolicitationUpdates();
   }
 
   renderLoader() {
@@ -137,8 +125,8 @@ class StreamList extends React.Component {
   }
 
   renderUpdates() {
-    console.log(this.props.notices);
-    return this.props.notices.map((notice) => {
+    console.log(this.props.solicitations);
+    return this.props.solicitations.map((notice) => {
       return (
         <div className="ui container segment" key={notice.row_id}>
           <div className="ui items">
@@ -150,28 +138,6 @@ class StreamList extends React.Component {
         </div>
       );
     });
-  }
-
-  handleSelection = (event) => {
-    console.log(event.target.value);
-    this.setState({ selectedNotice: event.target.value });
-    this.props.getNoticeUpdates(event.target.value);
-  };
-
-  renderOptions() {
-    if (
-      this.props &&
-      this.props.preferences &&
-      this.props.preferences.notices
-    ) {
-      return this.props.preferences.notices.map((eachNoticeEl) => {
-        return (
-          <option value={eachNoticeEl} key={eachNoticeEl}>
-            {eachNoticeEl}
-          </option>
-        );
-      });
-    }
   }
 
   render() {
@@ -187,40 +153,23 @@ class StreamList extends React.Component {
 
     // this.renderLoader();
 
-    return (
-      <div className="ui feed">
-        <div className="ui container segment">
-          <select
-            className="ui dropdown"
-            value={this.state.selectedNotice}
-            onChange={this.handleSelection}
-          >
-            <option value="">---Select Notice---</option>
-            {this.renderOptions()}
-          </select>
-        </div>
-        {this.renderUpdates()}
-      </div>
-    );
+    if (this.props.solicitations.length > 0) {
+      return <div className="ui feed">{this.renderUpdates()}</div>;
+    } else {
+      return <div></div>;
+    }
 
     // return <div></div>;
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.preferences);
   return {
-    stream: state.streams[ownProps.match.params.id],
-    notices: Object.values(state.notices),
+    solicitations: Object.values(state.solicitations),
     requestStatus: state.requestStatus,
-    preferences: state.preferences,
   };
 };
 
 export default connect(mapStateToProps, {
-  fetchStream,
-  editStream,
   getSolicitationUpdates,
-  getPreferences,
-  getNoticeUpdates,
-})(StreamList);
+})(TrackNotice);
