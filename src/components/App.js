@@ -24,14 +24,18 @@ const App = (props) => {
         },
       }}
     >
-      <div className="ui grid">
+      <div className="ui grid" style={{ height: "100%" }}>
         <Router history={history}>
           <div className="four wide column">
-            <div className="ui left fixed vertical menu">
+            {/* <div className="ui vertical left fixed  menu"> */}
+            <div
+              className="ui vertical fluid tabular menu"
+              style={{ height: "100%" }}
+            >
               <div className="item">
                 {/* <div className="ui segment"> */}
                 <img
-                  className="ui mini circular left image"
+                  className="ui small circular left image"
                   src="https://picsum.photos/200/200"
                 />
                 <div className="ui hidden divider"></div>

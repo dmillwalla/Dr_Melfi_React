@@ -183,15 +183,33 @@ class NoticeUpdates extends React.Component {
 
     return (
       <div className="ui feed">
-        <div className="ui container segment">
-          <select
-            className="ui dropdown"
-            value={this.state.selectedNotice}
-            onChange={this.handleSelection}
-          >
-            <option value="">---Select Notice---</option>
-            {this.renderOptions()}
-          </select>
+        <div className="ui container">
+          <div class="ui massive horizontal list">
+            <div className="item header">
+              <a className="ui basic label massive" style={{ border: "none" }}>
+                Updates
+              </a>
+            </div>
+            <div className="item">
+              <a
+                className="ui basic label massive grey"
+                style={{ border: "none" }}
+              >
+                Similar
+              </a>
+            </div>
+            <div className="item">
+              <select
+                className="ui dropdown massive"
+                value={this.state.selectedNotice}
+                onChange={this.handleSelection}
+                style={{ height: "auto" }}
+              >
+                <option value="">---Select Notice---</option>
+                {this.renderOptions()}
+              </select>
+            </div>
+          </div>
         </div>
         {this.renderUpdates()}
       </div>
