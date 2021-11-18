@@ -16,7 +16,11 @@ class DashboardContainer extends React.Component {
     this.state = { selectedchar: "" };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    // let canvas = document.getElementById("heatmapchart");
+    // let heightRatio = 10;
+    // canvas.height = canvas.width * heightRatio;
+  }
 
   renderHeatMap() {
     if (
@@ -165,7 +169,7 @@ class DashboardContainer extends React.Component {
   render() {
     return (
       <div className="ui feed">
-        <div className="ui fluid container grid">
+        <div className="ui fluid container stackable grid">
           <div className="five wide column">{this.renderActorDetails()}</div>
           <div className="eleven wide column">
             <canvas id="heatmapchart" height="5000" width="500" />

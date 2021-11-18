@@ -105,6 +105,8 @@ class HeatMapComponent extends React.Component {
       };
 
       const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
         indexAxis: "y",
         legend: { display: false },
         scales: {
@@ -120,6 +122,9 @@ class HeatMapComponent extends React.Component {
               display: false,
               padding: 0,
             },
+            grid: {
+              display: false,
+            },
           },
           y1: {
             weight: 0,
@@ -127,6 +132,9 @@ class HeatMapComponent extends React.Component {
             type: "category",
             labels: all_left_labels,
             gridLines: {
+              display: false,
+            },
+            grid: {
               display: false,
             },
           },
@@ -137,11 +145,20 @@ class HeatMapComponent extends React.Component {
             gridLines: {
               display: false,
             },
+            grid: {
+              display: false,
+            },
           },
           x1: {
             id: "x1",
             ticks: {
               beginAtZero: true,
+            },
+            gridLines: {
+              display: false,
+            },
+            grid: {
+              display: false,
             },
           },
           //   yAxes: [

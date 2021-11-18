@@ -67,7 +67,7 @@ class App extends React.Component {
           },
         }}
       >
-        <div className="ui grid" style={{ height: "100%" }}>
+        <div className="ui grid stackable" style={{ height: "100%" }}>
           <Router history={history}>
             <div className="four wide column">
               {/* <div className="ui vertical left fixed  menu"> */}
@@ -96,7 +96,7 @@ class App extends React.Component {
                     <div className="ui hidden divider"></div>
                   </span>
                   <select
-                    className="ui dropdown massive"
+                    className="ui dropdown "
                     value={this.state.selectedActor}
                     onChange={this.handleSelection}
                     style={{ height: "auto" }}
