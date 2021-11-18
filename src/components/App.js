@@ -77,7 +77,7 @@ class App extends React.Component {
               >
                 <div className="item">
                   {/* <div className="ui segment"> */}
-                  <img
+                  {/* <img
                     className="ui small circular left image"
                     src="https://picsum.photos/200/200"
                   />
@@ -86,11 +86,15 @@ class App extends React.Component {
                     <h3>
                       John Doe <i className="angle down icon"></i>
                     </h3>
-                  </span>
+                  </span> */}
                   {/* </div> */}
                 </div>
 
                 <div className="item">
+                  <span>
+                    <h3>Actors</h3>
+                    <div className="ui hidden divider"></div>
+                  </span>
                   <select
                     className="ui dropdown massive"
                     value={this.state.selectedActor}
