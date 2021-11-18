@@ -211,7 +211,7 @@ class NoticeUpdates extends React.Component {
             </div>
           </div>
         </div>
-        {this.renderUpdates()}
+        {/* {this.renderUpdates()} */}
       </div>
     );
 
@@ -222,7 +222,7 @@ class NoticeUpdates extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   console.log(state.preferences);
   return {
-    notices: Object.values(state.notices),
+    notices: {},
     requestStatus: state.requestStatus,
     preferences: state.preferences,
   };

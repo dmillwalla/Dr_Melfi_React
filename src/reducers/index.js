@@ -1,16 +1,14 @@
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 
-import authReducer from "./authReducer";
-import noticesReducer from "./noticesReducer";
+import actorsReducer from "./actorsReducer";
 import requestReducer from "./requestReducer";
-import solicitationReducer from "./solicitationReducer";
-import preferencesReducer from "./preferencesReducer";
+import fictionalCharMetricsReducer from "./fictionalCharMetricsReducer";
+import psychometricsReducer from "./psychometricsReducer";
 
 export default combineReducers({
-  auth: authReducer,
-  notices: noticesReducer,
   requestStatus: requestReducer,
-  solicitations: solicitationReducer,
-  preferences: preferencesReducer,
+  actors: actorsReducer,
+  movies: null,
+  fictionalCharMetrics: fictionalCharMetricsReducer,
+  psychometricsMetadata: psychometricsReducer,
 });
